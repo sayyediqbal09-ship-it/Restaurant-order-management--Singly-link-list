@@ -1,4 +1,5 @@
-1. Problem Statement
+1. Problem Statement:
+
 Design and implement a Restaurant Order Management System using a singly linked list in C++.
 The system should allow the user to:
 Add a new restaurant order.
@@ -6,7 +7,9 @@ Display all orders.
 Search for an order by order ID.
 Exit the program.
 Each order contains an Order ID and customer name. The linked list is used to dynamically store and manage restaurant orders.
+
 2. Algorithm
+
 Step 1: Start
 Initialize the head pointer of the linked list to NULL.
 Step 2: Display Menu
@@ -35,8 +38,10 @@ Otherwise, display "Order not found."
 Step 6: Exit
 Stop the program when the user selects Exit.
 Step 7: End
+
 3. Data Structure Used
-Singly Linked List
+
+Singly Linked List:
 A singly linked list is a linear data structure in which each node contains data and a pointer to the next node.
 Each node in our project contains:
 Order ID
@@ -49,5 +54,6 @@ struct Node
     string customerName;
     Node *next;
 };
+
 4. Conclusion
 The Restaurant Order Management System using a Singly Linked List is implemented in C++. It allows users to add, display, and search restaurant orders. The linked list provides dynamic memory allocation and makes order management easier.
