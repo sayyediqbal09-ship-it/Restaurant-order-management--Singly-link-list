@@ -1,51 +1,114 @@
 #include <iostream>
+#include <string>
 using namespace std;
 
 struct Node
 {
-    int order;
+    string foodName;
+    int quantity;
+    float price;
     Node *next;
 };
 
-int main()
+Node *head = NULL;
+
+void addOrder()
 {
-    Node *head = NULL, *newnode, *temp;
-    int n, i;
+    Node *newnode = new Node;
 
-    cout << "Enter number of orders: ";
-    cin >> n;
+    cout << "Enter Food Name: ";
+    cin >> newnode->foodName;
 
-    for(i = 1; i <= n; i++)
+    cout << "Enter Quantity: ";
+    cin >> newnode->quantity;
+
+    cout << "Enter Price: ";
+    cin >> newnode->price;
+
+    newnode->next = NULL;
+
+    if (head == NULL)
     {
-        newnode = new Node;
+        head = newnode;
+    }
+    else
+    {
+        Node *temp = head;
 
-        cout << "Enter order number: ";
-        cin >> newnode->order;
-
-        newnode->next = NULL;
-
-        if(head == NULL)
-            head = newnode;
-        else
+        while (temp->next != NULL)
         {
-            temp = head;
-
-            while(temp->next != NULL)
-                temp = temp->next;
-
-            temp->next = newnode;
+            temp = temp->next;
         }
+
+        temp->next = newnode;
     }
 
-    cout << "\nRestaurant Orders:\n";
+    cout << "Order Added Successfully!\n";
+}
 
-    temp = head;
+void displayOrders()
+{
+    Node *temp = head;
+    float totalBill = 0;
 
-    while(temp != NULL)
+    if (temp == NULL)
     {
-        cout << temp->order << " ";
+        cout << "No Orders Available!\n";
+        return;
+    }
+
+    cout << "\n--- Restaurant Orders ---\n";
+
+    while (temp != NULL)
+    {
+        cout << "Food Name: " << temp->foodName << endl;
+        cout << "Quantity: " << temp->quantity << endl;
+        cout << "Price per item: Rs. " << temp->price << endl;
+        cout << "Item Total: Rs. "
+      
+ << temp->quantity * temp->price << endl;
+        cout << "----------------------\n";
+
+        totalBill += temp->quantity * temp->price;
+
         temp = temp->next;
     }
+
+    cout << "Total Bill: Rs. " << totalBill << endl;
+}
+
+int main()
+{
+    int choice;
+
+    do
+    {
+        cout << "\n=== Restaurant Order Management ===\n";
+        cout << "1. Add Order\n";
+        cout << "2. Display Orders and Total Bill\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+            case 1:
+                addOrder();
+                break;
+
+            case 2:
+                displayOrders();
+                break;
+
+            case 3:
+                cout << "Thank You!\n";
+                break;
+
+            default:
+                cout << "Invalid Choice!\n";
+        }
+
+    } while (choice != 3);
 
     return 0;
 }
