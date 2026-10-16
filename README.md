@@ -5,10 +5,15 @@ The Restaurant Order Management System is designed to manage food orders using a
 2. Objectives:
 
 1]To develop a Restaurant Order Management System using a Singly Linked List.
+
 2]To store food names, quantities, and prices.
+
 3]To add new food orders dynamically.
+
 3]To display all food orders.
-4]To calculate the total bill.
+
+4]To calculate the total bills
+
 5]To understand the practical application of a Singly Linked List.
 
 3. Introduction
