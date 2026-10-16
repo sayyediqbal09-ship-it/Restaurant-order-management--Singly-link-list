@@ -20,16 +20,29 @@ This project helps us understand the use of linked lists in real-life applicatio
 4. Algorithm
 
 Step 1: Start the program.
+
 Step 2: Initialize the head pointer to NULL.
+
 Step 3: Display the menu.
+
 Step 4: Accept the user's choice.
-Step 5: If the choice is Add Order, enter the food name, quantity, and price.
+
+Step 5: If the choice is Add Order, enter the
+ food name, quantity, and price.
+
 Step 6: Create a new node and add it to the end of the linked list.
+
 Step 7: If the choice is Display Orders, display all food details.
-Step 8: Calculate the item total using Quantity × Price.
+
+Step 8: Calculate the item total using Quantity
+ × Price.
+
 Step 9: Calculate and display the total bill.
+
 Step 10: If the choice is Exit, terminate the program.
+
 Step 11: Repeat the menu until the user selects Exit.
+
 Step 12: Stop.
 
 5. Result
