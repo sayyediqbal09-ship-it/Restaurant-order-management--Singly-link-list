@@ -2,58 +2,33 @@
 1. Add Order
 2. Display Orders and Total Bill
 3. Exit
+
 Enter your choice: 1
-Enter Food Name: pizza
+Enter Food Name: Pizza
 Enter Quantity: 2
-Enter Price: 100
+Enter Price: 150
 Order Added Successfully!
 
-=== Restaurant Order Management ===
-1. Add Order
-2. Display Orders and Total Bill
-3. Exit
-Enter your choice: 2
-
---- Restaurant Orders ---
-Food Name: pizza
-Quantity: 2
-Price per item: Rs. 100
-Item Total: Rs. 200
-----------------------
-Total Bill: Rs. 200
-
-=== Restaurant Order Management ===
-1. Add Order
-2. Display Orders and Total Bill
-3. Exit
 Enter your choice: 1
-Enter Food Name: Burger 
-Enter Quantity: 1
-Enter Price: 220
+Enter Food Name: Burger
+Enter Quantity: 3
+Enter Price: 80
 Order Added Successfully!
 
-=== Restaurant Order Management ===
-1. Add Order
-2. Display Orders and Total Bill
-3. Exit
 Enter your choice: 2
 
 --- Restaurant Orders ---
-Food Name: pizza
+Food Name: Pizza
 Quantity: 2
-Price per item: Rs. 100
-Item Total: Rs. 200
+Price per item: Rs. 150
+Item Total: Rs. 300
 ----------------------
 Food Name: Burger
-Quantity: 1
-Price per item: Rs. 220
-Item Total: Rs. 220
+Quantity: 3
+Price per item: Rs. 80
+Item Total: Rs. 240
 ----------------------
-Total Bill: Rs. 420
+Total Bill: Rs. 540
 
-=== Restaurant Order Management ===
-1. Add Order
-2. Display Orders and Total Bill
-3. Exit
 Enter your choice: 3
 Thank You!
