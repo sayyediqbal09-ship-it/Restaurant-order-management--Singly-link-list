@@ -1,0 +1,120 @@
+#include <iostream>
+using namespace std;
+
+struct Node
+{
+    int id;
+    Node *left, *right;
+};
+
+Node* insert(Node* root, int id)
+{
+    if (root == NULL)
+    {
+        Node* temp = new Node();
+        temp->id = id;
+        temp->left = temp->right = NULL;
+        return temp;
+    }
+
+    if (id < root->id)
+        root->left = insert(root->left, id);
+    else if (id > root->id)
+        root->right = insert(root->right, id);
+
+    return root;
+}
+
+void find(Node* root, int key)
+{
+    Node *pre = NULL, *suc = NULL;
+    Node* temp = root;
+
+    while (temp != NULL)
+    {
+        if (temp->id == key)
+        {
+            if (temp->left)
+            {
+                Node* p = temp->left;
+                while (p->right)
+                    p = p->right;
+                pre = p;
+            }
+
+            if (temp->right)
+            {
+                Node* s = temp->right;
+                while (s->left)
+                    s = s->left;
+                suc = s;
+            }
+            break;
+        }
+
+        if (key < temp->id)
+        {
+            suc = temp;
+            temp = temp->left;
+        }
+        else
+        {
+            pre = temp;
+            temp = temp->right;
+        }
+    }
+
+    if (temp == NULL)
+    {
+        cout << "Patient ID not found!";
+        return;
+    }
+
+    cout << "\nPatient ID Found: " << key;
+    cout << "\nInorder Predecessor: ";
+    if (pre) cout << pre->id;
+    else cout << "None";
+
+    cout << "\nInorder Successor: ";
+    if (suc) cout << suc->id;
+    else cout << "None";
+
+    cout << "\n\nPATIENT RECORD SUMMARY";
+    cout << "\nSearched Patient ID: " << key;
+    cout << "\nPrevious Patient ID: ";
+    if (pre) cout << pre->id;
+    else cout << "None";
+
+    cout << "\nNext Patient ID: ";
+    if (suc) cout << suc->id;
+    else cout << "None";
+
+    cout << "\nPatient record search completed successfully!";
+}
+
+int main()
+{
+    Node* root = NULL;
+    int n, id, key;
+
+    cout << "HOSPITAL PATIENT RECORD SYSTEM\n";
+    cout << "USING BINARY SEARCH TREE\n";
+
+    cout << "\nEnter number of patients: ";
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
+    {
+        cout << "Enter Patient ID: ";
+        cin >> id;
+        root = insert(root, id);
+    }
+
+    cout << "\nPatient IDs inserted successfully!";
+    cout << "\nEnter Patient ID to search: ";
+    cin >> key;
+
+    find(root, key);
+
+    return 0;
+}
