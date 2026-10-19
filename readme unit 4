@@ -1,0 +1,68 @@
+Problem Statement:
+
+To develop a Hospital Patient Record System using a Binary Search Tree (BST), where patient IDs are used as keys. The system should allow the user to insert patient IDs into the BST and search for a given patient ID. It should also find and display the inorder predecessor and successor of the given patient ID. This system demonstrates how BST can be used to organize and search patient records efficiently.
+
+Objective:
+
+1]To understand the concept of a Binary Search Tree (BST).
+
+2]To store patient IDs in a structured manner using BST.
+
+3]To insert patient IDs into the tree according to BST properties.
+
+4]To search for a specific patient ID in the tree.
+
+5]To find the inorder predecessor of a given patient ID.
+
+6]To find the inorder successor of a given patient ID.
+
+7]To improve understanding of searching and sorting operations using tree data structures.
+
+8]To demonstrate the practical application of BST in hospital patient record management.
+
+Introduction:
+
+A Binary Search Tree (BST) is a non-linear data structure used to store data in an organized manner. Each node of a BST contains a key and pointers to its left and right child nodes. In this Hospital Patient Record System, patient IDs are used as keys. The smaller patient IDs are stored in the left subtree, while the larger patient IDs are stored in the right subtree. This arrangement helps in searching for patient IDs efficiently. The system allows users to insert patient IDs and search for a particular patient ID. It also finds the inorder predecessor and successor of the given patient ID. The inorder predecessor is the largest ID smaller than the given patient ID. The inorder successor is the smallest ID greater than the given patient ID. This project helps students understand the practical use of Binary Search Trees in organizing data and performing searching operations.
+
+ 4. Algorithm:
+
+
+Step 1: Start the program.
+
+Step 2: Create an empty Binary Search Tree by initializing the root to NULL.
+
+Step 3: Enter the total number of patients.
+
+Step 4: Read the patient IDs one by one.
+
+Step 5: Insert each patient ID into the BST according to the BST properties.
+
+Step 6: Enter the patient ID whose predecessor and successor are to be found.
+
+Step 7: Search for the given patient ID in the BST.
+
+Step 8: If the patient ID is not found, display a message indicating that the patient ID does not exist.
+
+Step 9: If the patient ID is found, find its inorder predecessor by identifying the largest ID smaller than the given ID.
+
+Step 10: Find its inorder successor by identifying the smallest ID greater than the given ID.
+
+Step 11: Display the inorder predecessor and successor. If either does not exist, display an appropriate message.
+
+Step 12: Stop the program.
+
+Result:
+
+The Hospital Patient Record System was successfully developed using a Binary Search Tree (BST). Patient IDs were inserted into the tree according to BST properties. The program successfully searches for a given patient ID and finds its inorder predecessor and successor.
+
+For example, if the patient IDs are 50, 30, 70, 20, and 40, and the given patient ID is 30, then the inorder predecessor is 20 and the inorder successor is 40.
+
+Thus, the program demonstrates the use of BST for organizing patient IDs and finding the previous and next IDs in sorted order.
+
+Conclusion:
+
+In this project, a Hospital Patient Record System was implemented using a Binary Search Tree. Patient IDs were stored as keys, with smaller IDs on the left side and larger IDs on the right side.
+
+The program helps in searching for a particular patient ID and finding its inorder predecessor and successor. It provides a practical understanding of BST insertion, searching, and traversal concepts.
+
+This project demonstrates that a Binary Search Tree can be useful for organizing and searching patient records. In a real hospital system, additional information such as patient name, age, and medical history could also be stored in each node to make the system more useful.
