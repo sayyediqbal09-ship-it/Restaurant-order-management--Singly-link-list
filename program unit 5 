@@ -1,0 +1,72 @@
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+struct Edge {
+    int u, v, cost;
+};
+
+bool compare(Edge a, Edge b) {
+    return a.cost < b.cost;
+}
+
+int parent[10];
+
+int find(int x) {
+    if (parent[x] == x)
+        return x;
+    return parent[x] = find(parent[x]);
+}
+
+int main() {
+    string dept[] = {
+        "Reception", "Emergency",
+        "Laboratory", "Pharmacy", "ICU"
+    };
+
+    Edge edges[] = {
+        {0, 1, 10},
+        {0, 2, 20},
+        {1, 2, 15},
+        {1, 3, 30},
+        {2, 3, 25},
+        {2, 4, 35},
+        {3, 4, 40}
+    };
+
+    int n = 5, e = 7;
+    int total = 0, count = 0;
+
+    cout << "Hospital Departments:\n";
+
+    for (int i = 0; i < n; i++)
+        cout << i + 1 << ". " << dept[i] << endl;
+
+    sort(edges, edges + e, compare);
+
+    for (int i = 0; i < n; i++)
+        parent[i] = i;
+
+    cout << "\nMinimum Spanning Tree:\n";
+
+    for (int i = 0; i < e && count < n - 1; i++) {
+        int u = find(edges[i].u);
+        int v = find(edges[i].v);
+
+        if (u != v) {
+            parent[u] = v;
+
+            cout << dept[edges[i].u] << " - "
+                 << dept[edges[i].v]
+                 << " : Rs. " << edges[i].cost << endl;
+
+            total += edges[i].cost;
+            count++;
+        }
+    }
+
+    cout << "\nTotal Cables: " << count;
+    cout << "\nMinimum Cost: Rs. " << total << endl;
+
+    return 0;
+}
